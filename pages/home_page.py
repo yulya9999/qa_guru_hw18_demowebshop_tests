@@ -1,6 +1,7 @@
 import allure
 from selene import browser, have
 from tests.data.base_func import user_auth
+from tests.data.base_params import LOGIN
 
 
 class HomePage:
@@ -11,7 +12,7 @@ class HomePage:
     @staticmethod
     @allure.step("Проверка авторизации")
     def check_login_auth():
-        browser.all('.account').first.should(have.text('yulya_vdovina_2000@mail.ru'))
+        browser.all('.account').first.should(have.text(LOGIN))
 
     @allure.step("Переход в корзину")
     def open_to_cart(self):
